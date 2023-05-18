@@ -53,6 +53,10 @@ export default function SignUp() {
       });
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <div>
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -144,11 +148,13 @@ export default function SignUp() {
             </div>
             <p>{error}</p>
 
-            <input
-              className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
-              type="submit"
-              value="Sign Up"
-            />
+            <Link>
+              <input
+                className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+                type="submit"
+                value="Sign Up"
+              />
+            </Link>
             <p className="text-center text-sm text-gray-500">
               Already have an account?
               <Link className="underline" to="/login">
