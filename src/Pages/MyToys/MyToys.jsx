@@ -7,7 +7,7 @@ export default function MyToys() {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
 
-  const url = `http://localhost:5000/addtoys?email=${user?.email}`;
+  const url = `http://localhost:5000/toys?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -26,7 +26,7 @@ export default function MyToys() {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addtoys/${id}`, {
+        fetch(`http://localhost:5000/toys/${id}`, {
           method: 'DELETE',
         })
           .then((res) => res.json())

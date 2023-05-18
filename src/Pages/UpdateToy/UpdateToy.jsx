@@ -1,12 +1,14 @@
-import React, { useContext, useState } from 'react';
-import { AuthContext } from '../../Providers/AuthProvider';
+import React, { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Providers/AuthProvider';
 
-export default function AddToy() {
-  const [category, setCategory] = useState('');
+export default function UpdateToy() {
+  const toys = useLoaderData();
+  const { _id, toy_name, picture, price, quantity, category } = toys;
   const { user } = useContext(AuthContext);
 
-  const handleAddToy = (event) => {
+  const handleUpdateToy = (event) => {
     event.preventDefault();
 
     const form = event.target;
@@ -19,7 +21,7 @@ export default function AddToy() {
     const quantity = form.quantity.value;
     const description = form.description.value;
 
-    const newToy = {
+    const updatedToy = {
       picture,
       toy_name,
       seller_name,
@@ -30,22 +32,22 @@ export default function AddToy() {
       description,
       category,
     };
-    console.log(newToy);
+    console.log(updatedToy);
 
-    fetch('http://localhost:5000/toys', {
-      method: 'POST',
+    fetch(`http://localhost:5000/toys/${_id}`, {
+      method: 'PUT',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify(newToy),
+      body: JSON.stringify(updatedToy),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: 'Success!',
-            text: 'Data Inserted Successfully',
+            text: 'Data Updated Successfully',
             icon: 'success',
             confirmButtonText: 'Ok',
           });
@@ -63,7 +65,7 @@ export default function AddToy() {
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-x-16 gap-y-8">
             <div className="rounded-lg  p-8 shadow-l lg:p-12">
-              <form onSubmit={handleAddToy} className="space-y-4">
+              <form onSubmit={handleUpdateToy} className="space-y-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div>
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
@@ -72,6 +74,7 @@ export default function AddToy() {
                     <input
                       className="w-full border-2 rounded-lg  p-3 text-sm"
                       placeholder="Picture URL"
+                      defaultValue={picture}
                       name="picture"
                       type="text"
                     />
@@ -84,6 +87,7 @@ export default function AddToy() {
                     <input
                       className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
                       placeholder="Toy Name"
+                      defaultValue={toy_name}
                       name="toy_name"
                       type="text"
                     />
@@ -141,6 +145,7 @@ export default function AddToy() {
                     <input
                       className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
                       placeholder="Price"
+                      defaultValue={price}
                       type="number"
                       name="price"
                     />
@@ -167,6 +172,7 @@ export default function AddToy() {
                     <input
                       className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
                       placeholder="Available quantity"
+                      defaultValue={quantity}
                       type="number"
                       name="quantity"
                     />
@@ -192,7 +198,7 @@ export default function AddToy() {
                     type="submit"
                     className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white "
                   >
-                    Add Toy
+                    Update Toy
                   </button>
                 </div>
               </form>
