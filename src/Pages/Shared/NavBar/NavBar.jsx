@@ -5,7 +5,7 @@ export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full bg-white">
+    <nav className="w-full bg-white mt-4">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -61,10 +61,13 @@ export default function NavBar() {
                 <Link to="/">Home</Link>
               </li>
               <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/donation">Donation</Link>
+                <Link to="/allToys">All Toys</Link>
               </li>
               <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/events">Events</Link>
+                <Link to="/myToys">My Toys</Link>
+              </li>
+              <li className="text-gray-600 hover:text-blue-600">
+                <Link to="/addToy">Add A Toy</Link>
               </li>
               <li className="text-gray-600 hover:text-blue-600">
                 <Link to="/blog">Blog</Link>
@@ -75,17 +78,16 @@ export default function NavBar() {
                   href="/download"
                 >
                   <span className="block rounded-sm bg-white px-8 py-3 text-sm font-medium hover:bg-transparent">
-                    Register
+                    Login
                   </span>
                 </Link>
               </li>
               <li className="text-gray-600 hover:text-blue-600">
-                <Link
-                  className="inline-block rounded border border-indigo-600 bg-black px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
-                  href="/download"
-                >
-                  Admin
-                </Link>
+                <img
+                  className="w-14 rounded-full"
+                  src="https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg"
+                  alt=""
+                />
               </li>
             </ul>
           </div>
