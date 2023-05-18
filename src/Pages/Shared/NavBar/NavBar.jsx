@@ -73,7 +73,7 @@ export default function NavBar() {
               </li>
               {user && (
                 <li className="text-gray-600 hover:text-blue-600">
-                  <Link to="/myToys">My Toys</Link>
+                  <Link to="/mytoys">My Toys</Link>
                 </li>
               )}
               {user && (

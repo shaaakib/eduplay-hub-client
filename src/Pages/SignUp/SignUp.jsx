@@ -20,7 +20,7 @@ export default function SignUp() {
     const password = form.password.value;
     console.log(name, email, photo, password);
 
-    // if (password !== confirm_password) {
+    // if (password ) {
     //   setError('Password must be 6 characters or longer');
     //   return;
     // }
