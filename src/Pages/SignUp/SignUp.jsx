@@ -1,20 +1,58 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+  const { createUser, auth, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignUp = (event) => {
     event.preventDefault();
+
     const form = event.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    console.log(name, email, photo, password);
+
+    // if (password !== confirm_password) {
+    //   setError('Password must be 6 characters or longer');
+    //   return;
+    // }
+
+    createUser(email, password)
+      .then((result) => {
+        logOut();
+        navigate('/login');
+
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => {
+            setUser(result.user);
+            setLoading(false);
+          })
+          .catch((error) => {
+            setError(error.code);
+          })
+          .catch((error) => {
+            console.log(error);
+            setError(error);
+          });
+        form.reset();
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
   };
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+
   return (
     <div>
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -104,6 +142,7 @@ export default function SignUp() {
                 )}
               </div>
             </div>
+            <p>{error}</p>
 
             <input
               className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"

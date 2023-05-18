@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch((error) => console.log(error));
+  };
 
   return (
     <nav className="w-full bg-white mt-4">
@@ -63,32 +71,57 @@ export default function NavBar() {
               <li className="text-gray-600 hover:text-blue-600">
                 <Link to="/allToys">All Toys</Link>
               </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/myToys">My Toys</Link>
-              </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/addToy">Add A Toy</Link>
-              </li>
+              {user && (
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link to="/myToys">My Toys</Link>
+                </li>
+              )}
+              {user && (
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link to="/addToy">Add A Toy</Link>
+                </li>
+              )}
               <li className="text-gray-600 hover:text-blue-600">
                 <Link to="/blog">Blog</Link>
               </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link
-                  className="inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
-                  to="/login"
-                >
-                  <span className="block rounded-sm bg-white px-8 py-3 text-sm font-medium hover:bg-transparent">
-                    Login
-                  </span>
-                </Link>
-              </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <img
-                  className="w-14 rounded-full"
-                  src="https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg"
-                  alt=""
-                />
-              </li>
+              {user ? (
+                <li className="text-gray-600 hover:text-blue-600">
+                  <button
+                    onClick={handleLogOut}
+                    className="inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
+                    to="/login"
+                  >
+                    <span className="block rounded-sm bg-white px-8 py-3 text-sm font-medium hover:bg-transparent">
+                      LogOut
+                    </span>
+                  </button>
+                </li>
+              ) : (
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link
+                    className="inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
+                    to="/login"
+                  >
+                    <span className="block rounded-sm bg-white px-8 py-3 text-sm font-medium hover:bg-transparent">
+                      Login
+                    </span>
+                  </Link>
+                </li>
+              )}
+              {user && (
+                <li className="text-gray-600 hover:text-blue-600">
+                  {user.photoURL ? (
+                    <img
+                      className="w-14 rounded-full"
+                      title={user.displayName}
+                      src={user.photoURL}
+                      alt="Profile"
+                    />
+                  ) : (
+                    ''
+                  )}
+                </li>
+              )}
             </ul>
           </div>
         </div>

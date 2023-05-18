@@ -1,16 +1,43 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+
+  const { signIn, signInWithGoogle } = useContext(AuthContext);
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+
+    signIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+        // navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        logOut();
+        navigate('/login');
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch((error) => console.log(error));
+  };
+
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
@@ -30,7 +57,10 @@ export default function Login() {
               Sign in to your account
             </p>
             <div>
-              <button className="bg-gray-200 flex justify-center items-center rounded-xl gap-3 w-full py-2">
+              <button
+                onClick={handleGoogleSignIn}
+                className="bg-gray-200 flex justify-center items-center rounded-xl gap-3 w-full py-2"
+              >
                 <p>Continue with Google</p>
                 <svg
                   width="31"
@@ -39,7 +69,7 @@ export default function Login() {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <g clip-path="url(#clip0_1_11)">
+                  <g clipPath="url(#clip0_1_11)">
                     <path
                       d="M30.9999 16.2334C30.9999 15.1547 30.9128 14.0702 30.7268 13.0089H15.8108V19.1198H24.3525C23.9981 21.0907 22.8592 22.8341 21.1915 23.942V27.9071H26.2875C29.28 25.1432 30.9999 21.0615 30.9999 16.2334Z"
                       fill="#4285F4"
