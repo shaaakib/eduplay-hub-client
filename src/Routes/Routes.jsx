@@ -7,6 +7,7 @@ import SignUp from '../Pages/SignUp/SignUp';
 import MyToys from '../Pages/MyToys/MyToys';
 import PrivateRoutes from './PrivateRoutes';
 import UpdateToy from '../Pages/UpdateToy/UpdateToy';
+import AllToys from '../Pages/AllToys/AllToys';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
         path: 'updatetoy/:id',
         element: <UpdateToy />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://eduplay-hub-server.vercel.app/toys/${params.id}`),
       },
       {
         path: 'mytoys',
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: 'signup',
         element: <SignUp />,
+      },
+      {
+        path: 'alltoy',
+        element: <AllToys />,
       },
     ],
   },

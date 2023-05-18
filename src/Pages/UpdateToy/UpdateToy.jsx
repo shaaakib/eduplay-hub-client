@@ -34,7 +34,7 @@ export default function UpdateToy() {
     };
     console.log(updatedToy);
 
-    fetch(`http://localhost:5000/toys/${_id}`, {
+    fetch(`https://eduplay-hub-server.vercel.app/toys/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

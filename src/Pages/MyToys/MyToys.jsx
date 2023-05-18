@@ -7,7 +7,7 @@ export default function MyToys() {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
 
-  const url = `http://localhost:5000/toys?email=${user?.email}`;
+  const url = `https://eduplay-hub-server.vercel.app/toys?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -26,7 +26,7 @@ export default function MyToys() {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toys/${id}`, {
+        fetch(`https://eduplay-hub-server.vercel.app/toys/${id}`, {
           method: 'DELETE',
         })
           .then((res) => res.json())
@@ -54,7 +54,7 @@ export default function MyToys() {
       <div className="overflow-x-auto">
         <div className="flex items-center justify-center  font-sans overflow-hidden">
           <div className="w-full ">
-            <div className="bg-white shadow-md rounded my-6">
+            <div className="bg-white max-w-full overflow-x-auto shadow-md rounded my-6">
               <table className="min-w-full w-full table-auto">
                 <thead>
                   <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">

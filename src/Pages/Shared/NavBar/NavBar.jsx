@@ -69,7 +69,7 @@ export default function NavBar() {
                 <Link to="/">Home</Link>
               </li>
               <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/allToys">All Toys</Link>
+                <Link to="/alltoy">All Toys</Link>
               </li>
               {user && (
                 <li className="text-gray-600 hover:text-blue-600">
