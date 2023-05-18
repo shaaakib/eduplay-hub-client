@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 export default function AddToy() {
   const [category, setCategory] = useState('');
+  const { user } = useContext(AuthContext);
 
   const handleAddToy = (event) => {
     event.preventDefault();
@@ -28,6 +31,26 @@ export default function AddToy() {
       category,
     };
     console.log(newToy);
+
+    fetch('http://localhost:5000/addtoys', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(newToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Data Inserted Successfully',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+          });
+        }
+      });
   };
 
   const handleChangeSelect = (event) => {
@@ -75,6 +98,7 @@ export default function AddToy() {
                     <input
                       className="w-full border-2 rounded-lg  p-3 text-sm"
                       placeholder="Seller Name"
+                      defaultValue={user?.displayName}
                       type="text"
                       name="seller_name"
                     />
@@ -87,6 +111,7 @@ export default function AddToy() {
                     <input
                       className="w-full rounded-lg border-2 border-gray-200 p-3 text-sm"
                       placeholder="Seller Email"
+                      defaultValue={user?.email}
                       type="email"
                       name="seller_email"
                     />
