@@ -28,11 +28,11 @@ const ShopByCategory = () => {
 
           <button
             className={`px-4 py-2 mr-2 text-sm font-medium focus:outline-none ${
-              category === 'engineering toys'
+              category === 'engineering kits'
                 ? 'bg-blue-500 text-white'
                 : 'bg-gray-200 text-gray-600'
             }`}
-            onClick={() => setCategory('engineering toys')}
+            onClick={() => setCategory('engineering kits')}
           >
             Engineering Toys
           </button>

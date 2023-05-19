@@ -148,13 +148,13 @@ export default function SignUp() {
             </div>
             <p>{error}</p>
 
-            <Link>
+            <div>
               <input
                 className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
                 type="submit"
                 value="Sign Up"
               />
-            </Link>
+            </div>
             <p className="text-center text-sm text-gray-500">
               Already have an account?
               <Link className="underline" to="/login">

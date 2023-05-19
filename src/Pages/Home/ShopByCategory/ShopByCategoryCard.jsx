@@ -4,7 +4,7 @@ export default function ShopByCategoryCard({ toy }) {
   const { picture, toy_name, description, rating, price } = toy;
   return (
     <div className="py-6">
-      <div className="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="flex max-w-md h-56 bg-white shadow-lg rounded-lg overflow-hidden">
         <div
           style={{
             backgroundImage: `url(${picture})`,
