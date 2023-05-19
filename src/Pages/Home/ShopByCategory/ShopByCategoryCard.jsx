@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ShopByCategoryCard({ toy }) {
-  const { picture, toy_name, description, rating, price } = toy;
+  const { _id, picture, toy_name, description, rating, price } = toy;
   return (
-    <div className="py-6">
-      <div className="flex max-w-md h-56 bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="py-6 ">
+      <div className="flex max-w-md h-60   bg-white shadow-lg rounded-lg overflow-hidden">
         <div
           style={{
             backgroundImage: `url(${picture})`,
@@ -49,9 +50,11 @@ export default function ShopByCategoryCard({ toy }) {
           </div>
           <div className="flex item-center justify-between mt-3">
             <h1 className="text-gray-700 font-bold text-xl">${price}</h1>
-            <button className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded">
-              View
-            </button>
+            <div className="">
+              <button className="px-3 py-2  bg-gray-800 text-white text-xs font-bold uppercase rounded">
+                <Link to={`/singletoy/${_id}`}>View</Link>
+              </button>
+            </div>
           </div>
         </div>
       </div>
