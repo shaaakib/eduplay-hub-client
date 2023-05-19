@@ -8,6 +8,7 @@ import MyToys from '../Pages/MyToys/MyToys';
 import PrivateRoutes from './PrivateRoutes';
 import UpdateToy from '../Pages/UpdateToy/UpdateToy';
 import AllToys from '../Pages/AllToys/AllToys';
+import SingleToy from '../Pages/AllToys/SingleToy';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,12 @@ const router = createBrowserRouter([
       {
         path: 'alltoy',
         element: <AllToys />,
+      },
+      {
+        path: 'singletoy/:id',
+        element: <SingleToy />,
+        loader: ({ params }) =>
+          fetch(`https://eduplay-hub-server.vercel.app/toys/${params.id}`),
       },
     ],
   },

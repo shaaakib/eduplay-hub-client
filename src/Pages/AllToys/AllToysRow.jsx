@@ -31,7 +31,7 @@ export default function AllToysRow({ allToy }) {
 
       <td className="py-3 px-6 text-center">
         <div className="flex item-center justify-center">
-          <Link to={`/updatetoy/${_id}`}>
+          <Link to={`/singletoy/${_id}`}>
             <button className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
               View
             </button>

@@ -129,7 +129,7 @@ export default function AddToy() {
                     >
                       <option>Choose a Category</option>
                       <option value="math toys">Math Toys</option>
-                      <option value="language toys">Language Toys</option>
+                      <option value="engineering kits">Engineering Kits</option>
                       <option value="science toys">Science Toys</option>
                     </select>
                   </div>
