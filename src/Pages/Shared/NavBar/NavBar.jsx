@@ -5,6 +5,7 @@ import { AuthContext } from '../../../Providers/AuthProvider';
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
   const { user, logOut } = useContext(AuthContext);
+  console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -110,7 +111,7 @@ export default function NavBar() {
               )}
               {user && (
                 <li className="text-gray-600 hover:text-blue-600">
-                  {user.photoURL ? (
+                  {user?.photoURL ? (
                     <img
                       className="w-14 rounded-full"
                       title={user.displayName}
