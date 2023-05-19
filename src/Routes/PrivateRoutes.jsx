@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 export default function PrivateRoutes({ children }) {
   const { user, loading } = useContext(AuthContext);
+  const location = useLocation();
+  console.log(location);
   if (loading) {
     return (
       <div className="flex items-center justify-center space-x-2 animate-bounce">
@@ -14,9 +16,10 @@ export default function PrivateRoutes({ children }) {
       </div>
     );
   }
+
   if (user?.email) {
     return children;
   }
 
-  return <Navigate to="/login" replace />;
+  return <Navigate state={{ from: location }} to="/login" replace />;
 }

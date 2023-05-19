@@ -51,7 +51,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'singletoy/:id',
-        element: <SingleToy />,
+        element: (
+          <PrivateRoutes>
+            <SingleToy />
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`https://eduplay-hub-server.vercel.app/toys/${params.id}`),
       },
