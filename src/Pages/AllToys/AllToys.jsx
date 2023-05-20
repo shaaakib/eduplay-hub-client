@@ -4,6 +4,7 @@ import AllToysRow from './AllToysRow';
 
 export default function AllToys() {
   const [allToys, setAllToys] = useState([]);
+  const [searchText, setSearchText] = useState('');
 
   const url = `https://eduplay-hub-server.vercel.app/toys`;
 
@@ -13,14 +14,31 @@ export default function AllToys() {
       .then((data) => setAllToys(data));
   }, []);
 
-  //   const { _id, toy_name, picture, price, quantity, category } = AllToys;
-
   return (
     <div>
       <h2 className="text-5xl">All Toys: {allToys.length}</h2>
+      <div className="flex items-center justify-end">
+        <div className="flex border-2 rounded">
+          <input
+            onChange={(e) => setSearchText(e.target.value)}
+            type="text"
+            className="px-4 py-2 w-80"
+            placeholder="Search..."
+          />
+          <button className="flex items-center justify-center px-4 border-l">
+            <svg
+              className="w-6 h-6 text-gray-600"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
+            </svg>
+          </button>
+        </div>
+      </div>
 
       {/* table  */}
-
       <div className="overflow-x-auto">
         <div className="flex items-center justify-center  font-sans overflow-hidden">
           <div className="w-full ">

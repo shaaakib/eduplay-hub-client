@@ -33,11 +33,7 @@ export default function MyToys() {
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
-              Swal.fire(
-                'Deleted!',
-                'Your Chocolate has been deleted.',
-                'success'
-              );
+              Swal.fire('Deleted!', 'Your data has been deleted.', 'success');
               const remaining = myToys.filter((toy) => toy._id !== id);
               setMyToys(remaining);
             }
