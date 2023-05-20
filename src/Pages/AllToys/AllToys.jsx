@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import AllToysRow from './AllToysRow';
 
 export default function AllToys() {
@@ -14,6 +13,14 @@ export default function AllToys() {
       .then((data) => setAllToys(data));
   }, []);
 
+  const handleSearch = () => {
+    fetch(
+      `https://eduplay-hub-server.vercel.app/getToysSearchText/${searchText}`
+    )
+      .then((res) => res.json())
+      .then((data) => setAllToys(data));
+  };
+
   return (
     <div>
       <h2 className="text-5xl">All Toys: {allToys.length}</h2>
@@ -25,7 +32,10 @@ export default function AllToys() {
             className="px-4 py-2 w-80"
             placeholder="Search..."
           />
-          <button className="flex items-center justify-center px-4 border-l">
+          <button
+            onClick={handleSearch}
+            className="flex items-center justify-center px-4 border-l"
+          >
             <svg
               className="w-6 h-6 text-gray-600"
               fill="currentColor"
