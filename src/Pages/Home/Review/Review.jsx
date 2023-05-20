@@ -4,7 +4,12 @@ export default function Review() {
   return (
     <div>
       <section>
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+        <div
+          className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8"
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-easing="ease-in-sine"
+        >
           <h2 className="text-xl font-bold sm:text-2xl">Customer Reviews</h2>
 
           <div className="mt-4 flex items-center gap-4">

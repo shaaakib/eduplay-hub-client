@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 export default function UpdateToy() {
+  const [category, setCategory] = useState('');
   const toys = useLoaderData();
-  const { _id, toy_name, picture, price, quantity, category } = toys;
+  const { _id, toy_name, picture, price, quantity } = toys;
   const { user } = useContext(AuthContext);
 
   const handleUpdateToy = (event) => {

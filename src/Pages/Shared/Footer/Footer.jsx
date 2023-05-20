@@ -261,7 +261,7 @@ export default function Footer() {
           </div>
 
           <p className="text-xs text-gray-500">
-            &copy; 2023. Volunteer Network. All rights reserved.
+            &copy; 2023. EduPlay-Hub. All rights reserved.
           </p>
         </div>
       </footer>

@@ -16,14 +16,16 @@ const ShopByCategory = () => {
 
   return (
     <div>
-      <div className="flex">
-        <div className="w-2 h-6 rounded-lg  bg-red-500"></div>
-        <div className="ms-1 text-red-500 font-bold">Categories</div>
+      <div data-aos="fade-right">
+        <div className="flex">
+          <div className="w-2 h-6 rounded-lg  bg-red-500"></div>
+          <div className="ms-1 text-red-500 font-bold">Categories</div>
+        </div>
+        <p className="text-2xl font-semibold mt-2">Browse By Category</p>
       </div>
-      <p className="text-2xl font-semibold mt-2">Browse By Category</p>
       <div className="flex justify-center mt-10">
         <div className="w-full">
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-4" data-aos="zoom-in">
             <button
               className={`px-4 py-6 mr-2 w-24 rounded-lg text-sm font-medium focus:outline-none ${
                 category === 'math toys'
@@ -59,7 +61,11 @@ const ShopByCategory = () => {
               <span className="">Science Toys</span>
             </button>
           </div>
-          <div className="grid grid-cols-1 gap-x-4 justify-center items-center  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          <div
+            className="grid grid-cols-1 gap-x-4 justify-center items-center  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
+            data-aos="fade-up"
+            data-aos-duration="3000"
+          >
             {toys.map((toy) => (
               <ShopByCategoryCard key={toy._id} toy={toy} />
             ))}
