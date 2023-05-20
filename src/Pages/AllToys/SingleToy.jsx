@@ -10,7 +10,6 @@ export default function SingleToy() {
   const [show2, setShow2] = useState(false);
   const { toy_name, picture, price, quantity, rating, description } =
     singleToys;
-  console.log(toy_name);
 
   return (
     <section className="pt-12 pb-24 bg-blueGray-100 rounded-b-10xl overflow-hidden">
