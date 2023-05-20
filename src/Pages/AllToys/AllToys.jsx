@@ -15,7 +15,7 @@ export default function AllToys() {
 
   const handleSearch = () => {
     fetch(
-      `https://eduplay-hub-server.vercel.app/getToysSearchText/${searchText}`
+      `https://eduplay-hub-server.vercel.app/toyName/search?keyword=${searchText}`
     )
       .then((res) => res.json())
       .then((data) => setAllToys(data));

@@ -54,7 +54,7 @@ export default function Login() {
 
           <button
             onClick={handleGoogleSignIn}
-            className="bg-gray-200 flex justify-center items-center rounded-xl gap-3 w-full py-2"
+            className="bg-gray-200 mt-5 flex justify-center items-center rounded-xl gap-3 w-full py-2"
           >
             <p>Continue with Google</p>
             <svg
@@ -89,9 +89,10 @@ export default function Login() {
               </defs>
             </svg>
           </button>
+          <p className="text-center mt-3">Or</p>
           <form
             onSubmit={handleLogin}
-            className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
+            className="mb-0  space-y-6 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
           >
             <p className="text-center text-lg font-medium">
               Sign in to your account
