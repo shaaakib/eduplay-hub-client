@@ -50,6 +50,7 @@ export default function AddToy() {
             confirmButtonText: 'Ok',
           });
         }
+        form.reset();
       });
   };
 

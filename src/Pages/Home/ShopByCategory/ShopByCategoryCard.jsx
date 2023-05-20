@@ -5,7 +5,7 @@ export default function ShopByCategoryCard({ toy }) {
   const { _id, picture, toy_name, description, rating, price } = toy;
   return (
     <div className="py-6 ">
-      <div className="flex max-w-md h-60   bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="flex max-w-md h-60 relative   bg-white shadow-lg rounded-lg overflow-hidden">
         <div
           style={{
             backgroundImage: `url(${picture})`,
@@ -51,7 +51,7 @@ export default function ShopByCategoryCard({ toy }) {
           <div className="flex item-center justify-between mt-3">
             <h1 className="text-gray-700 font-bold text-xl">${price}</h1>
             <div className="">
-              <button className="px-3 py-2  bg-gray-800 text-white text-xs font-bold uppercase rounded">
+              <button className="px-3 py-2 absolute bottom-0 right-0 my-4 mx-4  bg-gray-800 text-white text-xs font-bold uppercase rounded">
                 <Link to={`/singletoy/${_id}`}>View</Link>
               </button>
             </div>

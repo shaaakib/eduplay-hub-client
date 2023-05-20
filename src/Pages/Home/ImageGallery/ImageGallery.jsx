@@ -12,8 +12,8 @@ export default function ImageGallery() {
         <Link className="text-2xl text-yellow-500"> Check it out!</Link>
       </p>
 
-      <div className="container lg:px-32 px-4 py-8 mx-auto items-center ">
-        <div className="grid grid-cols-4 grid-rows-4 grid-flow-col gap-2">
+      <div className=" px-4 py-8 items-center ">
+        <div className="grid w-full h-[60rem] grid-cols-4 grid-rows-4 grid-flow-col gap-2">
           <div className="w-full row-span-2">
             <img
               src="https://m.media-amazon.com/images/I/61-UAerLUGL._AC_SL1200_.jpg"
