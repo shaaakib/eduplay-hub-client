@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import useTitle from '../../Hooks/useTitle';
+import SignAni from '../../assets/signup.json';
+import Lottie from 'lottie-react';
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
@@ -60,7 +62,10 @@ export default function SignUp() {
   };
 
   return (
-    <div>
+    <div className="lg:flex md:flex  items-center ">
+      <div className="md:w-1/2">
+        <Lottie animationData={SignAni} loop={true} />
+      </div>
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-lg">
           <h1 className="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
