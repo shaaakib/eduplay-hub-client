@@ -45,7 +45,7 @@ export default function Footer() {
 
                 <li>
                   <Link
-                    href="https://twitter.com/programminghero"
+                    to="https://twitter.com/programminghero"
                     rel="noreferrer"
                     target="_blank"
                     className="text-gray-700 transition hover:opacity-75"

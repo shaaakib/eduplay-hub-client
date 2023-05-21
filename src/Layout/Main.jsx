@@ -5,7 +5,7 @@ import NavBar from '../Pages/Shared/NavBar/NavBar';
 
 export default function Main() {
   return (
-    <div>
+    <div className="">
       <NavBar />
       <div className="md:min-h-[calc(100vh-32px)]">
         <Outlet />
