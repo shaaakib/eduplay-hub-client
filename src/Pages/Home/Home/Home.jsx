@@ -5,7 +5,7 @@ import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import Review from '../Review/Review';
 import Featured from '../Featured/Featured';
 import useTitle from '../../../Hooks/useTitle';
-import LatestBlog from '../LatestBlog/LatestBlog';
+import LatestBlog from '../latestBlog/latestBlog';
 
 export default function Home() {
   useTitle('Home');
