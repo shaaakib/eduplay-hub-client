@@ -7,7 +7,7 @@ export default function Main() {
   return (
     <div>
       <NavBar />
-      <div className="md:min-h-[calc(100vh-37px)]">
+      <div className="md:min-h-[calc(100vh-32px)]">
         <Outlet />
       </div>
       <Footer />

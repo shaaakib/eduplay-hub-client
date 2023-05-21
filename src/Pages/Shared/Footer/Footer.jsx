@@ -14,10 +14,8 @@ export default function Footer() {
               </div>
 
               <p className="max-w-xs mt-4 text-gray-500">
-                EduPlay-Hub provides a social media platform designed to
-                simplify the process of connecting volunteers with local
-                community groups who provide shelter, food, clothing and other
-                basic necessities to people in need.
+                EduPlay-Hub We deliver boxes of fantastic, hand-picked, age
+                appropriate toy, books and puzzles, straight to your door
               </p>
 
               <ul className="flex gap-6 mt-8">

@@ -62,6 +62,19 @@ export default function AddToy() {
   };
   return (
     <div>
+      <div>
+        <section className="relative bg-[url(https://img.freepik.com/free-vector/flat-design-background-christmas-toys_23-2148355805.jpg?w=996&t=st=1684649182~exp=1684649782~hmac=187d552feae92f4003726cb51762c695520c10632baefbd482bd0624b61032e5)] bg-cover bg-center bg-no-repeat rounded-lg">
+          <div className="absolute inset-0 bg-white/40 sm:bg-white/40 md:bg-white/40  sm:from-white/75 md:from-white/75 sm:to-white/95 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
+
+          <div className="relative px-4 py-32 sm:px-6 ">
+            <div className="text-center" data-aos="fade-up">
+              <h2 className="text-5xl text-center">Add Toy</h2>
+
+              <div className="mt-8 flex  gap-4 text-center justify-center"></div>
+            </div>
+          </div>
+        </section>
+      </div>
       <section>
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-x-16 gap-y-8">
