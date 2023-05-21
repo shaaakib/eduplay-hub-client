@@ -10,8 +10,16 @@ export default function SingleToy() {
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   useTitle('ToyDetails');
-  const { toy_name, picture, price, quantity, rating, description } =
-    singleToys;
+  const {
+    toy_name,
+    seller_email,
+    seller_name,
+    picture,
+    price,
+    quantity,
+    rating,
+    description,
+  } = singleToys;
 
   return (
     <section className="pt-12 pb-24 bg-blueGray-100 rounded-b-10xl overflow-hidden">
@@ -54,7 +62,7 @@ export default function SingleToy() {
                   className="flex justify-between items-center cursor-pointer"
                 >
                   <p className="text-base leading-4 text-gray-800">
-                    Shipping and returns
+                    Seller Email
                   </p>
                   <button
                     className="
@@ -91,8 +99,7 @@ export default function SingleToy() {
                   }
                   id="sect"
                 >
-                  You will be responsible for paying for your own shipping costs
-                  for returning your item. Shipping costs are nonrefundable
+                  {seller_email}
                 </div>
               </div>
             </div>
@@ -103,7 +110,7 @@ export default function SingleToy() {
                   className="flex justify-between items-center cursor-pointer"
                 >
                   <p className="text-base leading-4 text-gray-800">
-                    Contact us
+                    Seller Name
                   </p>
                   <button
                     className="
@@ -140,16 +147,9 @@ export default function SingleToy() {
                   }
                   id="sect"
                 >
-                  If you have any questions on how to return your item to us,
-                  contact us.
+                  {seller_name}
                 </div>
               </div>
-            </div>
-
-            <div className="mt-5">
-              <button className="bg-gray-700 text-white text-xl  py-2 rounded-lg w-full">
-                Add To Cart
-              </button>
             </div>
           </div>
         </div>

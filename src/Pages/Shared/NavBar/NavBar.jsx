@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import logo from '../../../assets/logo.png';
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
@@ -16,9 +17,9 @@ export default function NavBar() {
     <nav className="w-full bg-white mt-4">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+          <div className="flex items-center  justify-between py-3 md:py-5 md:block">
             <Link to="/">
-              <h1>EduPlay-Hub</h1>
+              <img className="w-32 h-14" src={logo} alt="" />
             </Link>
             <div className="md:hidden">
               <button

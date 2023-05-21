@@ -7,7 +7,7 @@ export default function Banner() {
         <div className="absolute inset-0 bg-white/40 sm:bg-white/40 md:bg-white/40  sm:from-white/75 md:from-white/75 sm:to-white/95 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"></div>
 
         <div className="relative px-4 py-32 sm:px-6 ">
-          <div className="text-center" data-aos="fade-right">
+          <div className="text-center" data-aos="fade-up">
             <p className="mt-4 text-4xl font-bold text-black">
               A New Box of Toys Every Month
             </p>

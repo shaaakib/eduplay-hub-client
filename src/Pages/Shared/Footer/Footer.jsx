@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../../assets/logo.png';
 
 export default function Footer() {
   return (
@@ -9,7 +10,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
               <div className="text-teal-600">
-                <h2>EduPlay-Hub</h2>
+                <img className="w-32 h-14" src={logo} alt="" />
               </div>
 
               <p className="max-w-xs mt-4 text-gray-500">
