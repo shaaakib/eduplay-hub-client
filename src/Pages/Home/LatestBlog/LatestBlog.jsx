@@ -34,7 +34,7 @@ export default function LatestBlog() {
             </div>
           </div>
           <button className="inline-block rounded bg-indigo-600 px-8 py-3 my-4 mx-4 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
-            Read More
+            <Link to="/blog">Read More</Link>
           </button>
         </article>
         <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
@@ -57,7 +57,7 @@ export default function LatestBlog() {
             </div>
           </div>
           <button className="inline-block rounded bg-indigo-600 px-8 py-3 my-4 mx-4 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
-            Read More
+            <Link to="/blog">Read More</Link>
           </button>
         </article>
         <article className="overflow-hidden rounded-lg shadow transition hover:shadow-lg">
@@ -80,7 +80,7 @@ export default function LatestBlog() {
             </div>
           </div>
           <button className="inline-block rounded bg-indigo-600 px-8 py-3 my-4 mx-4 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500">
-            Read More
+            <Link to="/blog">Read More</Link>
           </button>
         </article>
       </div>
