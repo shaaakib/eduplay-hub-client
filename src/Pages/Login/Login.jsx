@@ -3,6 +3,8 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
+import LoginAni from '../../assets/login.json';
+import Lottie from 'lottie-react';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -47,7 +49,10 @@ export default function Login() {
     setShowPassword(!showPassword);
   };
   return (
-    <div>
+    <div className="lg:flex md:flex justify-center items-center">
+      <div className="md:w-1/2">
+        <Lottie animationData={LoginAni} loop={true} />
+      </div>
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-lg">
           <h1 className="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
@@ -154,7 +159,7 @@ export default function Login() {
               </div>
             </div>
             <input
-              className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+              className="block w-full cursor-pointer rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
               type="submit"
               value="Sign In"
             />

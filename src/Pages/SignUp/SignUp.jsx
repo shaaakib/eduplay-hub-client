@@ -152,7 +152,7 @@ export default function SignUp() {
 
             <div>
               <input
-                className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+                className="block w-full cursor-pointer rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
                 type="submit"
                 value="Sign Up"
               />
