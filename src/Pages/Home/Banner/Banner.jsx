@@ -9,14 +9,16 @@ export default function Banner() {
       <section className="relative bg-[url(https://img.freepik.com/free-photo/top-view-childhood-cancer-awareness-month-background-concepttoys_23-2149499365.jpg?w=996&t=st=1684639859~exp=1684640459~hmac=9b98896d231f02518ee5879880391239dc1190bbb57b1046e63ec9b8937661e2)] bg-cover bg-center bg-no-repeat rounded-lg">
         <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28 relative">
           <div className="mr-auto place-self-center lg:col-span-7">
-            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
-              A New Box of Toys Every Month
-            </h1>
+            <div data-aos="fade-up" data-aos-duration="2000">
+              <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
+                A New Box of Toys Every Month
+              </h1>
 
-            <p className="max-w-2xl mb-6 font-light text-gray-800 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              We deliver boxes of fantastic, hand-picked, <br /> age appropriate
-              toy, books and puzzles, straight to your door.
-            </p>
+              <p className="max-w-2xl mb-6 font-light text-gray-800 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                We deliver boxes of fantastic, hand-picked, <br /> age
+                appropriate toy, books and puzzles, straight to your door.
+              </p>
+            </div>
 
             <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
               <Link
