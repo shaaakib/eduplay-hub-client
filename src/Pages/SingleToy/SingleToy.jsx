@@ -3,11 +3,13 @@ import { useLoaderData } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating';
 
 import '@smastrom/react-rating/style.css';
+import useTitle from '../../Hooks/useTitle';
 
 export default function SingleToy() {
   const singleToys = useLoaderData();
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
+  useTitle('ToyDetails');
   const { toy_name, picture, price, quantity, rating, description } =
     singleToys;
 

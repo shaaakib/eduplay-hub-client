@@ -2,10 +2,12 @@ import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Providers/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 export default function UpdateToy() {
   const [category, setCategory] = useState('');
   const toys = useLoaderData();
+  useTitle('Update Toy');
   const { _id, toy_name, picture, price, quantity } = toys;
   const { user } = useContext(AuthContext);
 

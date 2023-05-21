@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import AllToysRow from './AllToysRow';
+import useTitle from '../../Hooks/useTitle';
 
 export default function AllToys() {
   const [allToys, setAllToys] = useState([]);
   const [searchText, setSearchText] = useState('');
+  useTitle('AllToy');
 
   const url = `https://eduplay-hub-server.vercel.app/toys`;
 

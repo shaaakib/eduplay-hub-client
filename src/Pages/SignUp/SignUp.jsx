@@ -3,12 +3,14 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import useTitle from '../../Hooks/useTitle';
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const { createUser, auth, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
+  useTitle('SignUp');
 
   const handleSignUp = (event) => {
     event.preventDefault();

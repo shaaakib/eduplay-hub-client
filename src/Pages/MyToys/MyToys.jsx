@@ -2,10 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import MyToysRow from './MyToysRow';
 import Swal from 'sweetalert2';
+import useTitle from '../../Hooks/useTitle';
 
 export default function MyToys() {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  useTitle('MyToy');
 
   const url = `https://eduplay-hub-server.vercel.app/toys?email=${user?.email}`;
 

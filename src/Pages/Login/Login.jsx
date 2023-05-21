@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -9,6 +10,7 @@ export default function Login() {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  useTitle('Sign In');
   console.log('login page', location);
   const from = location.state?.from?.pathname || '/';
 

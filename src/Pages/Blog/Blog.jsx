@@ -1,6 +1,8 @@
 import React from 'react';
+import useTitle from '../../Hooks/useTitle';
 
 export default function Blog() {
+  useTitle('Blog');
   return (
     <div className="divide-y divide-gray-100 rounded-xl border border-gray-100 bg-white mt-20">
       <details
