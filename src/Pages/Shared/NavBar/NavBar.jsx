@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import logo from '../../../assets/logo.png';
 
@@ -66,27 +66,62 @@ export default function NavBar() {
             }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/">Home</Link>
+              <li className="text-gray-600 text-xl font-serif hover:text-blue-600">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'default'
+                  }
+                  to="/"
+                >
+                  Home
+                </NavLink>
               </li>
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/alltoy">All Toys</Link>
+              <li className="text-gray-600 text-xl font-serif hover:text-blue-600">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'default'
+                  }
+                  to="/alltoy"
+                >
+                  All Toys
+                </NavLink>
               </li>
               {user && (
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link to="/mytoys">My Toys</Link>
+                <li className="text-gray-600 text-xl font-serif hover:text-blue-600">
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? 'active' : 'default'
+                    }
+                    to="/mytoys"
+                  >
+                    My Toys
+                  </NavLink>
                 </li>
               )}
               {user && (
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link to="/addToy">Add A Toy</Link>
+                <li className="text-gray-600 text-xl font-serif hover:text-blue-600">
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive ? 'active' : 'default'
+                    }
+                    to="/addToy"
+                  >
+                    Add A Toy
+                  </NavLink>
                 </li>
               )}
-              <li className="text-gray-600 hover:text-blue-600">
-                <Link to="/blog">Blog</Link>
+              <li className="text-gray-600 text-xl font-serif hover:text-blue-600">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? 'active' : 'default'
+                  }
+                  to="/blog"
+                >
+                  Blog
+                </NavLink>
               </li>
               {user ? (
-                <li className="text-gray-600 hover:text-blue-600">
+                <li className="text-gray-600 text-xl font-serif hover:text-blue-600">
                   <button
                     onClick={handleLogOut}
                     className="inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
@@ -98,15 +133,15 @@ export default function NavBar() {
                   </button>
                 </li>
               ) : (
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link
+                <li className="text-gray-600 text-xl font-serif hover:text-blue-600">
+                  <NavLink
                     className="inline-block rounded bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
                     to="/login"
                   >
                     <span className="block rounded-sm bg-white px-8 py-3 text-sm font-medium hover:bg-transparent">
                       Login
                     </span>
-                  </Link>
+                  </NavLink>
                 </li>
               )}
               {user && (

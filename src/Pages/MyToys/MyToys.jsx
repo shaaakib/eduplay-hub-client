@@ -63,7 +63,7 @@ export default function MyToys() {
 
       {/* table  */}
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto mt-7">
         <div className="flex items-center justify-center  font-sans overflow-hidden">
           <div className="w-full ">
             <div className="bg-white max-w-full overflow-x-auto shadow-md rounded my-6">

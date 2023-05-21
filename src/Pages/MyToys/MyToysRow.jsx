@@ -10,7 +10,7 @@ export default function MyToysRow({ myToy, handleDelete }) {
         <div className="flex items-center">
           <div>
             {picture && (
-              <img className="w-14 rounded" src={picture} alt="toy img" />
+              <img className="w-14 h-8 rounded" src={picture} alt="toy img" />
             )}
           </div>
         </div>

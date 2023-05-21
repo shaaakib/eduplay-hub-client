@@ -62,7 +62,7 @@ const ShopByCategory = () => {
             </button>
           </div>
           <div
-            className="grid grid-cols-1 gap-x-4 justify-center items-center  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
+            className="grid grid-cols-1 gap-x-4 justify-center items-center mx-auto  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3"
             data-aos="fade-up"
             data-aos-duration="3000"
           >
